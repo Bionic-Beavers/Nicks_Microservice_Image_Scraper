@@ -1,0 +1,35 @@
+{% extends "main.j2" %}
+
+{% block title %}
+  Browse
+{% endblock %}
+
+{% block header %}
+  <h1 id="top">Browse All Organizations</h1>
+<a class="nav-link" href="{{ url_for('advancedSearch') }}">Search Organizations</a>
+{% endblock %}
+
+{% block body %}
+
+
+<div class='browse'>
+    <img src="{{ url_for('static', filename='img/ny.jpg') }}" class="img-thumbnail">
+    <a href="{{ url_for('organizationPage') }}">Organization Title</a>
+    <img src="{{ url_for('static', filename='img/ny.jpg') }}" class="img-thumbnail">
+    <a href="{{ url_for('organizationPage') }}">Organization Title</a>
+    <img src="{{ url_for('static', filename='img/ny.jpg') }}" class="img-thumbnail">
+    <a href="{{ url_for('organizationPage') }}">Organization Title</a>
+    <img src="{{ url_for('static', filename='img/ny.jpg') }}" class="img-thumbnail">
+    <a href="{{ url_for('organizationPage') }}">Organization Title</a>         
+    <img src="{{ url_for('static', filename='img/ny.jpg') }}" class="img-thumbnail">
+    <a href="{{ url_for('organizationPage') }}">Organization Title</a>
+    <br>
+    <br>
+    <br>
+    <a href="#top">Return to Top</a>
+</div>
+  
+
+
+{% endblock %}
+
