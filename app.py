@@ -47,6 +47,7 @@ def root():
     imagePath = ''
 
     try: 
+        # Get the last jpg image in the list (as this is the topmost jpg image on the wikiPage)
         for i in range(len(images) - 1, 0, -1):
             fileType = images[i][(len(images[i])-3):len(images[i])]
             if fileType.lower() == "jpg":
@@ -57,39 +58,6 @@ def root():
         imagePath = ("http://flip3.engr.oregonstate.edu:" + str(port) + "/?q=" + urlify(defaultPage, len(defaultPage)))
     
     return redirect(imagePath)
-
-    
-################################################################################
-
-
-    # # Get the first .jpg or .png image from the list and get the imagePath
-    # try:
-    #     for i in range(len(images)):
-    #         index = images[i][(len(images[i])-3):len(images[i])]
-    #         if index.lower() == "jpg" or index == "png":
-    #             imagePath = images[i]
-    #             print("Image found. Path:", imagePath)
-    #             break
-    #     try:
-    #         index = images[len(images)-1][(len(images[len(images)-1])-3):len(images[len(images)-1])]
-    #         if index.lower() == "jpg" or index.lower() == "png":
-    #             imagePath = images[len(images)-1]
-    #             print("Image found. Path:", imagePath)
-        
-    #     except:
-    #         for i in range(len(images)):
-    #             index = images[i][(len(images[i])-3):len(images[i])]
-    #             if index.lower() == "jpg" or index == "png":
-    #                 imagePath = images[i]
-    #                 print("Image found. Path:", imagePath)
-    #                 break
-
-    # except: 
-    #     imagePath = ("http://flip3.engr.oregonstate.edu:" + str(port) + "/?q=" + urlify(defaultPage, len(defaultPage)))
-
-    # # return render_template("main.j2", imagePath=imagePath)
-#########################################################################################
-
 
 
 def urlify(in_string, in_string_length):
