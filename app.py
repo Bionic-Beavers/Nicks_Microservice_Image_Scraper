@@ -18,12 +18,14 @@ port = int(os.environ.get('PORT', 8545))
 
 db_connection = db.connect_to_database()
 
-# Routes 
 
 @app.route('/')
 def root():
 
+    # Get the query string in URL
     query = request.args.get('q')
+
+    # Set default page in case of error
     defaultPage = "Puppies"
     
     try: 
@@ -42,7 +44,7 @@ def root():
 
     # Get list of images from current Wikipage using API
     images = wikiPage.images
-    print(images)
+    
     #Initialize variable
     imagePath = ''
 
@@ -59,7 +61,7 @@ def root():
     
     return redirect(imagePath)
 
-
+# Make URL from string for default wikipedia image
 def urlify(in_string, in_string_length):
     return in_string[:in_string_length].replace(' ', '%20')
 
